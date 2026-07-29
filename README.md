@@ -4,9 +4,9 @@
 
 当前版本是 `0.1.3`，已包含局域网、公共 Wi-Fi 认证、微信直连、加密 DNS、AI、代码服务 GitHub/GitLab、Google、流媒体 Netflix/Disney+、TikTok、Meta（Facebook/Instagram）、Telegram 电报、X 推特、苹果消息推送、Apple 服务、香港券商和中国大陆 IP 的基础分流；服务规则以第三方 Shadowrocket 专用规则集远程引用。首次导入时，通用服务默认通过“节点选择 → 自动选择”运行，地区策略组保留为按需手动切换出口的选项。
 
-## 导入与更新地址
+## 规则更新地址
 
-大多数用户：导入 CN 平衡版，国内直连、其余流量代理。
+！！！推荐！！！：CN 平衡版，国内直连、其余流量代理。
 
 ```text
 https://raw.githubusercontent.com/ianzo0/Shadowrocket-Rule/main/ianzo-cn.conf
@@ -23,6 +23,14 @@ https://raw.githubusercontent.com/ianzo0/Shadowrocket-Rule/main/ianzo-full.conf
 ```text
 https://raw.githubusercontent.com/ianzo0/Shadowrocket-Rule/main/ianzo-gfw.conf
 ```
+
+
+## 使用说明
+
+复制上方任一地址，在 Shadowrocket 中通过“从 URL 下载配置”导入。每套配置内已写入对应的 `update-url`，后续可直接检查更新。
+
+本项目不提供代理节点、订阅服务或网络访问保证。用户应自行确认节点来源、当地法律和各服务的使用条款。
+
 
 ## 目标
 
@@ -99,11 +107,7 @@ flowchart TD
 
 全量版会加载约 30.9 万条上游规则，可能增加首次导入、更新编译和内存占用；低性能设备可优先使用 CN 平衡版。
 
-## 使用说明
 
-复制上方任一地址，在 Shadowrocket 中通过“从 URL 下载配置”导入。每套配置内已写入对应的 `update-url`，后续可直接检查更新。
-
-本项目不提供代理节点、订阅服务或网络访问保证。用户应自行确认节点来源、当地法律和各服务的使用条款。
 
 ## 许可与第三方依赖
 
