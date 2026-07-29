@@ -79,12 +79,12 @@ flowchart TD
 
 ## 使用说明
 
-配置完成并发布后，使用 `ianzo-rule-cn.conf` 的 Raw 地址导入 Shadowrocket。
+使用 `ianzo-rule-cn.conf` 的 Raw 地址导入 Shadowrocket；配置内已写入同一更新地址，后续可在 Shadowrocket 中直接检查更新。
 
-主配置的更新地址将固定为：
+主配置更新地址：
 
 ```text
-https://raw.githubusercontent.com/<你的用户名>/Shadowrocket-Rule/main/ianzo-rule-cn.conf
+https://raw.githubusercontent.com/ianzo0/Shadowrocket-Rule/main/ianzo-rule-cn.conf
 ```
 
 本项目不提供代理节点、订阅服务或网络访问保证。用户应自行确认节点来源、当地法律和各服务的使用条款。
