@@ -70,7 +70,7 @@ flowchart TD
   FULL --> F1["私网直连 → 广告拦截 → 直连规则 → 代理规则 → GEOIP,CN"]
   F1 --> F2["其余 → 未命中的境外流量"]
   GFW --> G1["GFWList → 节点选择"]
-  GFW --> G2["其余 → DIRECT"]
+  G1 --> G2["其余 → DIRECT"]
 ```
 
 例如，打开 ChatGPT 时会先命中 OpenAI 规则，再交由“🤖 AI服务 OpenAI/Anthropic”策略组选择出口；不会继续匹配广告、国内 IP 或最终兜底规则。
