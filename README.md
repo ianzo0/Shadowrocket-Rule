@@ -69,7 +69,7 @@ flowchart TD
   CN1 --> CN2["其余 → 未命中的境外流量"]
   FULL --> F1["私网直连 → 广告拦截 → 直连规则 → 代理规则 → GEOIP,CN"]
   F1 --> F2["其余 → 未命中的境外流量"]
-  GFW --> G1["GFWList 命中<br/>→ 节点选择"]
+  GFW --> G1["GFWList 命中 → 节点选择"]
   GFW --> G2["其余 → DIRECT"]
 ```
 
