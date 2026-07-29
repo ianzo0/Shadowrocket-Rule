@@ -2,7 +2,27 @@
 
 一个面向 Shadowrocket 的独立配置项目。
 
-当前版本是 `0.1.2`，已包含局域网、公共 Wi-Fi 认证、微信直连、加密 DNS、AI、代码服务 GitHub/GitLab、Google、流媒体 Netflix/Disney+、TikTok、Meta（Facebook/Instagram）、Telegram 电报、X 推特、苹果消息推送、Apple 服务、香港券商和中国大陆 IP 的基础分流；服务规则以第三方 Shadowrocket 专用规则集远程引用。首次导入时，通用服务默认通过“节点选择 → 自动选择”运行，地区策略组保留为按需手动切换出口的选项。
+当前版本是 `0.1.3`，已包含局域网、公共 Wi-Fi 认证、微信直连、加密 DNS、AI、代码服务 GitHub/GitLab、Google、流媒体 Netflix/Disney+、TikTok、Meta（Facebook/Instagram）、Telegram 电报、X 推特、苹果消息推送、Apple 服务、香港券商和中国大陆 IP 的基础分流；服务规则以第三方 Shadowrocket 专用规则集远程引用。首次导入时，通用服务默认通过“节点选择 → 自动选择”运行，地区策略组保留为按需手动切换出口的选项。
+
+## 导入与更新地址
+
+大多数用户：导入 CN 平衡版，国内直连、其余流量代理。
+
+```text
+https://raw.githubusercontent.com/ianzo0/Shadowrocket-Rule/main/ianzo-cn.conf
+```
+
+需要更全面的直连、代理和广告规则：导入全量版。
+
+```text
+https://raw.githubusercontent.com/ianzo0/Shadowrocket-Rule/main/ianzo-full.conf
+```
+
+希望仅代理 GFWList 命中网站：导入 GFW 版。
+
+```text
+https://raw.githubusercontent.com/ianzo0/Shadowrocket-Rule/main/ianzo-gfw.conf
+```
 
 ## 目标
 
@@ -29,9 +49,9 @@
 
 ```text
 Shadowrocket-Rule/
-├── ianzo-rule-cn.conf    ← 平衡版：国内直连、其他流量按服务分流后代理
-├── ianzo-rule-full.conf  ← 全量规则版：加入远程直连、代理、广告与私网规则集
-├── ianzo-rule-gfw.conf   ← GFW 模式：服务分流 → GFWList 代理 → 其余直连
+├── ianzo-cn.conf    ← 平衡版：国内直连、其他流量按服务分流后代理
+├── ianzo-full.conf  ← 全量规则版：加入远程直连、代理、广告与私网规则集
+├── ianzo-gfw.conf   ← GFW 模式：服务分流 → GFWList 代理 → 其余直连
 ├── README.md
 ├── LICENSE
 ├── CHANGELOG.md
@@ -48,9 +68,9 @@ Shadowrocket-Rule/
 
 | 文件 | 本地规则数 | 远程规则集 | 适用场景 | 最终策略 |
 | --- | ---: | ---: | --- | --- |
-| `ianzo-rule-cn.conf` | 34 条 | 18 个 | 大多数用户 | 中国大陆 IP 直连，其余流量交由“未命中的境外流量”策略组处理。 |
-| `ianzo-rule-full.conf` | 38 条 | 22 个 | 希望获得更多直连/代理/广告覆盖的用户 | 服务分流后使用外部全量规则集，再以中国大陆 IP 与未命中流量兜底；规则规模较大。 |
-| `ianzo-rule-gfw.conf` | 34 条 | 19 个 | 偏好白名单直连、只代理受限网站的用户 | 服务分流后命中 GFWList 才代理，其他全部直连。 |
+| `ianzo-cn.conf` | 34 条 | 18 个 | 大多数用户 | 中国大陆 IP 直连，其余流量交由“未命中的境外流量”策略组处理。 |
+| `ianzo-full.conf` | 38 条 | 22 个 | 希望获得更多直连/代理/广告覆盖的用户 | 服务分流后使用外部全量规则集，再以中国大陆 IP 与未命中流量兜底；规则规模较大。 |
+| `ianzo-gfw.conf` | 34 条 | 19 个 | 偏好白名单直连、只代理受限网站的用户 | 服务分流后命中 GFWList 才代理，其他全部直连。 |
 
 “本地规则数”是各配置 `[Rule]` 段内的有效规则行，包含 `RULE-SET` 引用行；远程规则集内容会随第三方维护更新，因此不把其动态条数作为固定总数。全量版所引用的四份通用清单在审计时合计约 30.9 万条，详见 `docs/AUDIT.md`。
 
@@ -81,13 +101,7 @@ flowchart TD
 
 ## 使用说明
 
-使用 `ianzo-rule-cn.conf` 的 Raw 地址导入 Shadowrocket；配置内已写入同一更新地址，后续可在 Shadowrocket 中直接检查更新。
-
-主配置更新地址：
-
-```text
-https://raw.githubusercontent.com/ianzo0/Shadowrocket-Rule/main/ianzo-rule-cn.conf
-```
+复制上方任一地址，在 Shadowrocket 中通过“从 URL 下载配置”导入。每套配置内已写入对应的 `update-url`，后续可直接检查更新。
 
 本项目不提供代理节点、订阅服务或网络访问保证。用户应自行确认节点来源、当地法律和各服务的使用条款。
 

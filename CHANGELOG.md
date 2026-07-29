@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.3 — 2026-07-30
+
+- 配置文件统一移除 `-rule`：更名为 `ianzo-cn.conf`、`ianzo-full.conf` 和 `ianzo-gfw.conf`，并同步更新配置内更新地址、文档和自动化校验。
+- 将三套配置的导入与更新地址前置到 README，每条地址均可单独复制。
+
 ## 0.1.2 — 2026-07-30
 
 - 将“节点选择”、AI、Google 与 Meta 的默认出口统一为通用自动测速；美国、日本、新加坡、香港等地区组改为可选的手动出口。
@@ -8,7 +13,7 @@
 ## 0.1.1 — 2026-07-30
 
 - 修复三套配置中 TikTok 远程规则地址被策略组图标误改的问题。
-- 更新 GitHub Actions 校验目标，改为检查 `ianzo-rule-cn.conf`、`ianzo-rule-full.conf` 和 `ianzo-rule-gfw.conf`。
+- 更新 GitHub Actions 校验目标，改为检查 `ianzo-cn.conf`、`ianzo-full.conf` 和 `ianzo-gfw.conf`。
 - 为局域网、公共 Wi-Fi 认证、微信本地回调和 Apple 推送加入 `always-real-ip` 排除项。
 - 收紧 Google 中国入口重写的主机名边界。
 - 补充全量版规则规模、Fake-IP 边界、地区节点命名要求和 GFW 版未使用策略组说明。
@@ -16,7 +21,7 @@
 ## 0.1.0 — 2026-07-29
 
 - 创建独立项目骨架。
-- 添加具备逐行中文说明的 `ianzo-rule-cn.conf` 最小可测试配置。
+- 添加具备逐行中文说明的 `ianzo-cn.conf` 最小可测试配置。
 - 加入局域网、AI 与开发、国际媒体、即时通讯、Apple 服务和中国大陆 IP 的基础分流。
 - 增加加密 DNS 回退、常见硬编码 DNS 劫持、Google、TikTok 与 Meta 的最小可审查规则。
 - 重写地区节点分组，支持香港、美国、日本、台湾、新加坡和其他节点的自动测速与服务级切换。
