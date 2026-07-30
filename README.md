@@ -12,11 +12,15 @@
 https://raw.githubusercontent.com/ianzo0/Shadowrocket-Rule/main/ianzo-cn.conf
 ```
 
+![扫描导入 CN 平衡版](assets/qr/ianzo-cn.png)
+
 需要更全面的直连、代理和广告规则：导入全量版。
 
 ```text
 https://raw.githubusercontent.com/ianzo0/Shadowrocket-Rule/main/ianzo-full.conf
 ```
+
+![扫描导入全量版](assets/qr/ianzo-full.png)
 
 希望仅代理 GFWList 命中网站：导入 GFW 版。
 
@@ -24,6 +28,7 @@ https://raw.githubusercontent.com/ianzo0/Shadowrocket-Rule/main/ianzo-full.conf
 https://raw.githubusercontent.com/ianzo0/Shadowrocket-Rule/main/ianzo-gfw.conf
 ```
 
+![扫描导入 GFW 版](assets/qr/ianzo-gfw.png)
 
 ## 使用说明
 
